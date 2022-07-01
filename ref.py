@@ -13,3 +13,11 @@ print(9/3)
 # µØ°å³ı
 print(10//3)
 print(7//3)
+
+age = 3
+if age >= 18:
+    print('adult')
+elif age >= 6:
+    print('teenager')
+else:
+    print('kid')

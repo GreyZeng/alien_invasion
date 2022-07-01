@@ -27,6 +27,7 @@
   <ItemGroup>
     <Compile Include="hello.py" />
     <Compile Include="iflearn.py" />
+    <Compile Include="ref.py" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|VisualStudio|Python" />

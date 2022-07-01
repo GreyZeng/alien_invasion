@@ -2,9 +2,6 @@
 #%f	浮点数
 #%s	字符串
 #%x	十六进制整数
-from pickle import TRUE
-
-
 print('Hello, %s' % 'world')
 
 

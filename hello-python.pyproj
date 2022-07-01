@@ -26,6 +26,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ecncodetest.py" />
+    <Compile Include="formattest.py" />
     <Compile Include="hello.py" />
     <Compile Include="iflearn.py" />
     <Compile Include="ref.py" />

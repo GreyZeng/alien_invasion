@@ -1,23 +1,24 @@
 a = 'ABC'
 b = a
 a = 'XYZ'
-# ÕâÀïbÒÀÈ»Êä³öÊÇABC
+# è¿™é‡Œbä¾ç„¶è¾“å‡ºæ˜¯ABC
 print(b)
 
 
-# ¾«È·
+# ç²¾ç¡®
 # 3.33333333
+
 print(10/3)
 # 3.0
 print(9/3)
-# µØ°å³ı
+# åœ°æ¿é™¤
 print(10//3)
 print(7//3)
 
-age = 3
+age = 7
 if age >= 18:
     print('adult')
 elif age >= 6:
-    print('teenager')
+    print('é’å°‘å¹´')
 else:
     print('kid')

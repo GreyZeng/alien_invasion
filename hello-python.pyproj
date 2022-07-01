@@ -25,6 +25,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ecncodetest.py" />
     <Compile Include="hello.py" />
     <Compile Include="iflearn.py" />
     <Compile Include="ref.py" />

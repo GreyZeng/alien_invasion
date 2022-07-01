@@ -1,4 +1,6 @@
+print(2**10);
 print("Hello world")
+
 
 print("Hello", "Welcome to", "China")
 

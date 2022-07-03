@@ -1,11 +1,11 @@
 a = int(input("input a num: "))
 
-if (a > 0):
-    print(r'''hello,\n
-world''')
-
-else: 
-    print("yy")
-
+age = 7
+if age >= 18:
+    print('adult')
+elif age >= 6:
+    print('teenager')
+else:
+    print('kid')
 
 

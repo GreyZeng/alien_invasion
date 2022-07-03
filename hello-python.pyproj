@@ -28,6 +28,7 @@
     <Compile Include="ecncodetest.py" />
     <Compile Include="formattest.py" />
     <Compile Include="hello.py" />
+    <Compile Include="forlearn.py" />
     <Compile Include="iflearn.py" />
     <Compile Include="listandtuple.py" />
     <Compile Include="ref.py" />

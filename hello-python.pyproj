@@ -28,6 +28,7 @@
     <Compile Include="dict_set.py" />
     <Compile Include="ecncodetest.py" />
     <Compile Include="formattest.py" />
+    <Compile Include="fuc.py" />
     <Compile Include="hello.py" />
     <Compile Include="forlearn.py" />
     <Compile Include="myabs.py" />

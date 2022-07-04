@@ -25,6 +25,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="dict_set.py" />
     <Compile Include="ecncodetest.py" />
     <Compile Include="formattest.py" />
     <Compile Include="hello.py" />

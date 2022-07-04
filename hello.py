@@ -1,3 +1,7 @@
+from myabs import my_abs
+
+
+print(my_abs(-100))
 print(2**10);
 print("Hello world")
 

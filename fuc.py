@@ -3,11 +3,11 @@ def calc(*numbers):
     for n in numbers:
         sum = sum + n * n
     return sum
-# ¿É±ä²ÎÊı
+# å¯å˜å‚æ•°
 print(calc(1, 3, 5, 7))
 print(calc(1, 3, 5))
-# PythonÔÊĞíÄãÔÚlist»òtupleÇ°Ãæ¼ÓÒ»¸ö*ºÅ£¬°Ñlist»òtupleµÄÔªËØ±ä³É¿É±ä²ÎÊı´«½øÈ¥£º
-# number×÷Îªlist»òÕßtuple
+# Pythonå…è®¸ä½ åœ¨listæˆ–tupleå‰é¢åŠ ä¸€ä¸ª*å·ï¼ŒæŠŠlistæˆ–tupleçš„å…ƒç´ å˜æˆå¯å˜å‚æ•°ä¼ è¿›å»ï¼š
+# numberä½œä¸ºlistæˆ–è€…tuple
 def calc(numbers):
     sum = 0
     for n in numbers:

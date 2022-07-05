@@ -9,10 +9,12 @@ def my_abs(x):
 
 import math
 
+
 def move(x, y, step, angle=0):
     nx = x + step * math.cos(angle)
     ny = y - step * math.sin(angle)
     return nx, ny
+
 
 r = move(100, 100, 60, math.pi / 6)
 
@@ -26,16 +28,23 @@ def power(x, n=2):
         s = s * x
     return s
 
-print(power(3))
-print(power(2,4))
 
-# ×¢ÒâÁ½¸ö·½·¨µÄÇø±ğ
+print(power(3))
+print(power(2, 4))
+
+
+# æ³¨æ„ä¸¤ä¸ªæ–¹æ³•çš„åŒºåˆ«
+# é»˜è®¤å‚æ•°å¿…é¡»æŒ‡å‘ä¸å˜å¯¹è±¡ï¼
 def add_end1(L=[]):
     L.append('END')
     return L
+
+
 print(add_end1())
 print(add_end1())
 print(add_end1())
+
+
 def add_end2(L=None):
     if L is None:
         L = []
@@ -43,5 +52,5 @@ def add_end2(L=None):
     return L
 
 
-print(add_end2([1,2,3]))
-print(add_end2([1,2,3]))
+print(add_end2([1, 2, 3]))
+print(add_end2([1, 2, 3]))

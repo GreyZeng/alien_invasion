@@ -22,3 +22,7 @@ a = (1,2)
 print(a)
 a = (1,23,4)
 print(a)
+a = 3
+print(a)
+a = "h"
+print(a)

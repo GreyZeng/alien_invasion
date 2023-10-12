@@ -14,3 +14,6 @@ for user, status in users.items():
         active_users[user] = status
 print(active_users)
 print('\n')
+
+s = [value ** 2 for value in range(1, 11)]
+print(s)

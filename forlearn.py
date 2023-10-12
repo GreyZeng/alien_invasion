@@ -17,3 +17,8 @@ print('\n')
 
 s = [value ** 2 for value in range(1, 11)]
 print(s)
+
+a = (1,2)
+print(a)
+a = (1,23,4)
+print(a)

@@ -13,3 +13,5 @@ class Dog:
 mydog = Dog("zss",12)
 mydog.sit()
 mydog.roll_over()
+mydog.name = "list"
+mydog.roll_over()

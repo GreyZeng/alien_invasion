@@ -9,5 +9,6 @@ path = Path('C:/workspace/hello-python/README.md')
 content = path.read_text(encoding='UTF-8', errors='ignore').rstrip()
 print(content)
 
-path2 = Path('tmp.file')
-path2.write_text(path.read_text(encoding='UTF-8', errors='ignore').rstrip())
+# 写文件
+# path2 = Path('tmp.file')
+# path2.write_text(path.read_text(encoding='UTF-8', errors='ignore').rstrip())

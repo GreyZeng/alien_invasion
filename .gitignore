@@ -22,6 +22,7 @@ parts/
 sdist/
 var/
 .vs/
+.vscode/
 env/
 env1/
 wheels/

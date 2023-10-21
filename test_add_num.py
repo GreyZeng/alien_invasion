@@ -1,14 +1,19 @@
+import pytest
+
 from add_num import add
 
 
-def test_add1():
-    sum = add(1,2)
-    assert sum == 3
+# 全局应用
+@pytest.fixture
+def result():
+    return 3
 
-def test_add2():
-    sum = add(2,2)
-    assert sum == 4
 
-def test_add3():
-    sum = add(2,3)
-    assert sum == 5
+def test_add2(result):
+    sum = add(1, 2)
+    assert sum == result
+
+
+def test_add3(result):
+    sum = add(2, 1)
+    assert sum == result

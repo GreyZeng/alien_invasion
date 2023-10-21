@@ -1,21 +1,22 @@
 import sys
 import pygame
+from settings import Settings
 
 
 class AlienInvasion:
     def __init__(self):
         pygame.init()
         self.clock = pygame.time.Clock()
-        self.screen = pygame.display.set_mode((1200, 800))
+        self.settings = Settings()
+        self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
-        self.bg_color = (230, 222, 234)
 
     def run_game(self):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     sys.exit()
-            self.screen.fill(self.bg_color)
+            self.screen.fill(self.settings.bg_color)
             # 每次执行while循环的时候都绘制一个空屏幕，并擦去旧屏幕
             pygame.display.flip()
             # 用于控制帧率，每次循环的时候都进行计时

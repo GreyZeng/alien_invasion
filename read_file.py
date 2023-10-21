@@ -8,3 +8,6 @@ path = Path('C:/workspace/hello-python/README.md')
 # rstrip 是删除末尾的换行符
 content = path.read_text(encoding='UTF-8', errors='ignore').rstrip()
 print(content)
+
+path2 = Path('tmp.file')
+path2.write_text(path.read_text(encoding='UTF-8', errors='ignore').rstrip())

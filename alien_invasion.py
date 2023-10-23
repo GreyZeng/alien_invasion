@@ -16,6 +16,7 @@ class AlienInvasion:
     def run_game(self):
         while True:
             self._check_events()
+            self.ship.update()
             self._update_screen()
             # 用于控制帧率，每次循环的时候都进行计时
             # 当这个循环通过速度超过定义的帧率时，Pygame会计算需要暂停多长时间，以便游戏速度保持一致
@@ -31,7 +32,10 @@ class AlienInvasion:
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RIGHT:
-                    self.ship.rect.x += 1
+                    self.ship.moving_right = True
+            elif event.type == pygame.KEYUP:
+                if event.key == pygame.K_RIGHT:
+                    self.ship.moving_right = False
 
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)

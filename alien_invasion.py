@@ -1,34 +1,34 @@
 import sys
+
 import pygame
+
 from settings import Settings
 from ship import Ship
+from bullet import Bullet
 
 
 class AlienInvasion:
+
     def __init__(self):
         pygame.init()
         self.clock = pygame.time.Clock()
         self.settings = Settings()
-        # self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-        self.screen_width = self.screen.get_rect().width
-        self.screen_height = self.screen.get_rect().height
+
+        self.screen = pygame.display.set_mode(
+            (self.settings.screen_width, self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
+
         self.ship = Ship(self)
+        self.bullets = pygame.sprite.Group()
 
     def run_game(self):
         while True:
             self._check_events()
             self.ship.update()
+            self._update_bullets()
             self._update_screen()
-            # 用于控制帧率，每次循环的时候都进行计时
-            # 当这个循环通过速度超过定义的帧率时，Pygame会计算需要暂停多长时间，以便游戏速度保持一致
-            # tick方法接受一个参数：游戏的帧率，这里使用的值是 60
-            # Pygame将尽可能确保这个循环每秒恰好运行60次
             self.clock.tick(60)
 
-    # 辅助方法(helper method)一般只在类中调用，不会在类外面调用
-    # 辅助方法的名称以单下划线打头
     def _check_events(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -44,8 +44,9 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
-            # 输入 Q 键 也可以退出
             sys.exit()
+        elif event.key == pygame.K_SPACE:
+            self._fire_bullet()
 
     def _check_keyup_events(self, event):
         if event.key == pygame.K_RIGHT:
@@ -53,10 +54,23 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
 
+    def _fire_bullet(self):
+        if len(self.bullets) < self.settings.bullets_allowed:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        self.bullets.update()
+
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
+
     def _update_screen(self):
         self.screen.fill(self.settings.bg_color)
+        for bullet in self.bullets.sprites():
+            bullet.draw_bullet()
         self.ship.blitme()
-        # 每次执行while循环的时候都绘制一个空屏幕，并擦去旧屏幕
         pygame.display.flip()
 
 

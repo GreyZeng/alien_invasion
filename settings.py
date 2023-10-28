@@ -8,7 +8,7 @@ class Settings:
 
         # Ship settings.
         self.ship_speed = 1.5
-
+        self.ship_limit = 3
         # Bullet settings
         self.bullet_speed = 3.5
         # 把 bullet_width 设置大一，可以方便快速测试消除所有外星人

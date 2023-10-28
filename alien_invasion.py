@@ -28,7 +28,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
-            self._update_alien()
+            self._update_aliens()
             self._update_screen()
             self.clock.tick(60)
 
@@ -97,9 +97,11 @@ class AlienInvasion:
         new_alien.rect.y = y_position
         self.aliens.add(new_alien)
 
-    def _update_alien(self):
+    def _update_aliens(self):
         self._check_fleet_edges()
         self.aliens.update()
+        if pygame.sprite.spritecollideany(self.ship, self.aliens):
+            print("Ship hit!!!")
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():

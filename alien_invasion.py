@@ -153,8 +153,17 @@ class AlienInvasion:
                 break
 
     def _check_play_button(self, mouse_pos):
-        if self.play_button.rect.collidepoint(mouse_pos):
+        button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+        if button_clicked and not self.game_active:
+            self.stats.reset_stats()
             self.game_active = True
+
+            self.bullets.empty()
+            self.aliens.empty()
+
+            self._create_fleet()
+            self.ship.center_ship()
+            pygame.mouse.set_visible(False)
 
 
 if __name__ == '__main__':

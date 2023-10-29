@@ -11,7 +11,7 @@ class Settings:
         self.ship_limit = 3
         # Bullet settings
         self.bullet_speed = 3.5
-        # 把 bullet_width 设置大一，可以方便快速测试消除所有外星人
+        # 把 bullet_width 设置大一点，可以方便快速测试消除所有外星人
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (60, 60, 60)

@@ -24,13 +24,16 @@ class AlienInvasion:
         self.bullets = pygame.sprite.Group()
         self.aliens = pygame.sprite.Group()
         self._create_fleet()
+        # 游戏启动后处于活动状态
+        self.game_active = True
 
     def run_game(self):
         while True:
             self._check_events()
-            self.ship.update()
-            self._update_bullets()
-            self._update_aliens()
+            if self.game_active:
+                self.ship.update()
+                self._update_bullets()
+                self._update_aliens()
             self._update_screen()
             self.clock.tick(60)
 
@@ -104,6 +107,7 @@ class AlienInvasion:
         self.aliens.update()
         if pygame.sprite.spritecollideany(self.ship, self.aliens):
             self._ship_hit()
+        self._check_aliens_bottom()
 
     def _check_fleet_edges(self):
         for alien in self.aliens.sprites():
@@ -123,13 +127,23 @@ class AlienInvasion:
             self._create_fleet()
 
     def _ship_hit(self):
-        self.stats.ships_left -= 1
-        self.bullets.empty()
-        self.aliens.empty()
-        # 创建一个新的外星舰队，并将飞船放在屏幕底部的中央
-        self._create_fleet()
-        self.ship.center_ship()
-        sleep(0.5)
+        if self.stats.ships_left > 0:
+            self.stats.ships_left -= 1
+            self.bullets.empty()
+            self.aliens.empty()
+            # 创建一个新的外星舰队，并将飞船放在屏幕底部的中央
+            self._create_fleet()
+            self.ship.center_ship()
+            sleep(0.5)
+        else:
+            self.game_active = False
+
+    def _check_aliens_bottom(self):
+        """检查是否有外星人到达了屏幕的下边缘"""
+        for alien in self.aliens.sprites():
+            if alien.rect.bottom >= self.settings.screen_height:
+                self._ship_hit()
+                break
 
 
 if __name__ == '__main__':

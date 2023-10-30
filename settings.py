@@ -1,24 +1,29 @@
 class Settings:
 
     def __init__(self):
-        # Screen settings
+        """游戏的静态设置"""
+        # 屏幕设置
         self.screen_width = 1200
         self.screen_height = 800
         self.bg_color = (230, 230, 230)
 
-        # Ship settings.
-        self.ship_speed = 1.5
+        # 飞船设置
         self.ship_limit = 3
-        # Bullet settings
-        self.bullet_speed = 3.5
-        # 把 bullet_width 设置大一点，可以方便快速测试消除所有外星人
+
+        # 子弹设置
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (60, 60, 60)
         self.bullets_allowed = 3
 
-        # alien settings
-        self.alien_speed = 1.0
+        # 外星人设置
         self.fleet_drop_speed = 10
+        self.speedup_scale = 1.1
+        self.initialize_dynamic_settings()
+
+    def initialize_dynamic_settings(self):
+        self.ship_speed = 1.5
+        self.bullet_speed = 3.5
+        self.alien_speed = 1.0
         # fleet_direction 为 1 表示向右移动，-1 表示向左移动
         self.fleet_direction = 1
